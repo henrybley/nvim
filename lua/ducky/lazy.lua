@@ -4,13 +4,13 @@ require('lazy').setup({
         tag = '0.1.4',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
-    { 
+    {
         "ellisonleao/gruvbox.nvim",
-        priority = 1000 , 
-        config = true, 
+        priority = 1000,
+        config = true,
         opts = ...
     },
-    { 
+    {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate'
     },
@@ -41,13 +41,13 @@ require('lazy').setup({
         lazy = true,
         config = false,
     },
-    { 
+    {
         'neovim/nvim-lspconfig',
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' }
         }
     },
-    { 
+    {
         'hrsh7th/nvim-cmp',
         version = false, -- last release is way too old
         event = "InsertEnter",
@@ -55,9 +55,9 @@ require('lazy').setup({
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-          },
+        },
     },
-    
+
 
 
     'hrsh7th/cmp-buffer',
@@ -66,7 +66,7 @@ require('lazy').setup({
     'hrsh7th/cmp-nvim-lua',
     'rafamadriz/friendly-snippets',
     "rafamadriz/friendly-snippets",
-    
+
     -- install without yarn or npm
     {
         "iamcco/markdown-preview.nvim",
@@ -85,4 +85,26 @@ require('lazy').setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
+
+
+    { -- This plugin
+        "Zeioth/compiler.nvim",
+        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        dependencies = { "stevearc/overseer.nvim" },
+        opts = {},
+    },
+    { -- The task runner we use
+        "stevearc/overseer.nvim",
+        commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
+        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        opts = {
+            task_list = {
+                direction = "bottom",
+                min_height = 25,
+                max_height = 25,
+                default_detail = 1
+            },
+        },
+    },
+
 })

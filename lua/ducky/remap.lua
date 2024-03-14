@@ -84,9 +84,11 @@ vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
 -- TODO: need to figure this out
 vim.keymap.set("n", "<leader><S-e>", "<cmd>lua require('telescope.builtin').diagnostics({ sort_by = 'severity' })<CR>")
 
+-- Open compiler
+vim.api.nvim_set_keymap('n', '<leader>co', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cr', "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
 
 -- Greek letters
-
 vim.keymap.set("i", "<C-g>g", "<C-k>g*") -- gamma
 vim.keymap.set("i", "<C-g>d", "<C-k>d*") -- delta
 vim.keymap.set("i", "<C-g>h", "<C-k>h*") -- theta
