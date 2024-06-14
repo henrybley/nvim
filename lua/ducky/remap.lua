@@ -27,7 +27,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 
 vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
 
 
 vim.keymap.set("n", "Q", "<nop>")
@@ -87,6 +86,7 @@ vim.keymap.set("n", "<leader><S-e>", "<cmd>lua require('telescope.builtin').diag
 -- Open compiler
 vim.api.nvim_set_keymap('n', '<leader>co', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cr', "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cc', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 -- Greek letters
 vim.keymap.set("i", "<C-g>g", "<C-k>g*") -- gamma

@@ -33,6 +33,29 @@ require('lazy').setup({
 
     'lukas-reineke/indent-blankline.nvim',
 
+    {
+        'nvim-java/nvim-java',
+        dependencies = {
+            'nvim-java/lua-async-await',
+            'nvim-java/nvim-java-refactor',
+            'nvim-java/nvim-java-core',
+            'nvim-java/nvim-java-test',
+            'nvim-java/nvim-java-dap',
+            'MunifTanjim/nui.nvim',
+            'neovim/nvim-lspconfig',
+            'mfussenegger/nvim-dap',
+            {
+                'williamboman/mason.nvim',
+                opts = {
+                    registries = {
+                        'github:nvim-java/mason-registry',
+                        'github:mason-org/mason-registry',
+                    },
+                },
+            }
+        },
+    },
+
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     {
@@ -64,8 +87,14 @@ require('lazy').setup({
     'hrsh7th/cmp-path',
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lua',
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
     'rafamadriz/friendly-snippets',
-    "rafamadriz/friendly-snippets",
 
     -- install without yarn or npm
     {
