@@ -1,6 +1,6 @@
 vim.keymap.set("n", "qq", "")
 --vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "-", vim.cmd.Ex)
+vim.keymap.set("n", "-", "<cmd>:NvimTreeFocus<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -32,6 +32,10 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", function ()
     vim.lsp.buf.format()
+end)
+
+vim.keymap.set("n", "<leader>ca", function ()
+    vim.lsp.buf.code_action()
 end)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

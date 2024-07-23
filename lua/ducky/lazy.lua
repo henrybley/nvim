@@ -1,14 +1,51 @@
 require('lazy').setup({
+
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {}
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+    },
+
+
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
-    },
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = true,
-        opts = ...
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -116,12 +153,6 @@ require('lazy').setup({
     },
 
 
-    { -- This plugin
-        "Zeioth/compiler.nvim",
-        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-        dependencies = { "stevearc/overseer.nvim" },
-        opts = {},
-    },
     { -- The task runner we use
         "stevearc/overseer.nvim",
         commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
