@@ -1,7 +1,14 @@
 require('lazy').setup({
 
-    {
+    --[[    {
         "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    ]] --
+    {
+        "eldritch-theme/eldritch.nvim",
         lazy = false,
         priority = 1000,
         opts = {},
@@ -25,23 +32,40 @@ require('lazy').setup({
         },
     },
     {
-        "m4xshen/hardtime.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-        opts = {}
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
+        "rachartier/tiny-code-action.nvim",
         dependencies = {
-            "nvim-tree/nvim-web-devicons",
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope.nvim" },
         },
+        event = "LspAttach",
         config = function()
-            require("nvim-tree").setup {}
+            require('tiny-code-action').setup()
+        end
+    },
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
         end,
     },
-
-
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
@@ -63,8 +87,6 @@ require('lazy').setup({
     'mbbill/undotree',
 
     'tpope/vim-fugitive',
-
-    'm4xshen/autoclose.nvim',
 
     'HiPhish/rainbow-delimiters.nvim',
 

@@ -1,3 +1,8 @@
+-- my settings --
+vim.o.splitbelow = true
+vim.o.splitright = true
+--
+
 vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
