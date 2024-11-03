@@ -1,2 +1,1 @@
---vim.cmd[[colorscheme tokyonight-storm]]
-vim.cmd[[colorscheme eldritch]]
+vim.cmd[[colorscheme tokyonight-storm]]

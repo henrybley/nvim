@@ -1,18 +1,18 @@
 require('lazy').setup({
 
-    --[[    {
+    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         opts = {},
     },
-    ]] --
     {
         "eldritch-theme/eldritch.nvim",
         lazy = false,
         priority = 1000,
         opts = {},
     },
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -92,29 +92,6 @@ require('lazy').setup({
 
     'lukas-reineke/indent-blankline.nvim',
 
-    {
-        'nvim-java/nvim-java',
-        dependencies = {
-            'nvim-java/lua-async-await',
-            'nvim-java/nvim-java-refactor',
-            'nvim-java/nvim-java-core',
-            'nvim-java/nvim-java-test',
-            'nvim-java/nvim-java-dap',
-            'MunifTanjim/nui.nvim',
-            'neovim/nvim-lspconfig',
-            'mfussenegger/nvim-dap',
-            {
-                'williamboman/mason.nvim',
-                opts = {
-                    registries = {
-                        'github:nvim-java/mason-registry',
-                        'github:mason-org/mason-registry',
-                    },
-                },
-            }
-        },
-    },
-
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     {
@@ -139,8 +116,6 @@ require('lazy').setup({
             "hrsh7th/cmp-path",
         },
     },
-
-
 
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -175,18 +150,27 @@ require('lazy').setup({
     },
 
 
-    { -- The task runner we use
-        "stevearc/overseer.nvim",
-        commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
-        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    {
+        "stevearc/conform.nvim",
+        lazy = true,
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
-            task_list = {
-                direction = "bottom",
-                min_height = 25,
-                max_height = 25,
-                default_detail = 1
+            formatters_by_ft = {
+                php = { "php-cs-fixer" },
             },
+            formatters = {
+                ["php-cs-fixer"] = {
+                    command = "php-cs-fixer",
+                    args = {
+                        "fix",
+                        "--rules=@PSR12", -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+                        "$FILENAME",
+                    },
+                    stdin = false,
+                },
+            },
+            notify_on_error = true,
         },
-    },
+    }
 
 })
