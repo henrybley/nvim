@@ -6,12 +6,6 @@ require('lazy').setup({
         priority = 1000,
         opts = {},
     },
-    {
-        "eldritch-theme/eldritch.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
     {
         "folke/which-key.nvim",
@@ -47,6 +41,12 @@ require('lazy').setup({
         event = "LspAttach",
         config = function()
             require('tiny-code-action').setup()
+        end
+    },
+    {
+        "karb94/neoscroll.nvim",
+        config = function()
+            require('neoscroll').setup({})
         end
     },
     {
