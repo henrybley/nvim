@@ -15,23 +15,11 @@ lsp.setup_servers({
     'eslint',
     'lua_ls',
     'rust_analyzer',
-    'intelephense'
+    'intelephense',
+    'python_lsp_server'
 })
 
-lsp.configure('intelephense', {
-    settings = {
-        intelephense = {
-            telemetry = {
-                enabled = false
-            },
-            environment = {
-                includePaths = {
-                    "[...redacted...]/phpunit/vendor/**"
-                }
-            }
-        }
-    }
-})
+
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
@@ -135,4 +123,7 @@ nvim_lsp.rust_analyzer.setup {
     }
 }
 
+nvim_lsp.pylsp.setup {}
+
 lsp.setup()
+
