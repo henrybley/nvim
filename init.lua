@@ -1,1 +1,1 @@
-require("ducky")
+require("config")

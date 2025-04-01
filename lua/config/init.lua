@@ -10,9 +10,9 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 
-
 vim.opt.rtp:prepend(lazypath)
 
-require("ducky.set");
-require("ducky.remap");
-require("ducky.lazy");
+require("config.set");
+require("config.lsp");
+require("config.remap");
+require("config.lazy");
