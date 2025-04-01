@@ -1,7 +1,10 @@
 -- start my keymaps
 vim.keymap.set("n", "<leader>ca", function()
 	require("tiny-code-action").code_action()
-end, { noremap = true, silent = true })
+end, { noremap = true, silent = true });
+
+-- vim-fugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
 
 -- Yank
 vim.keymap.set("n", "<leader>y", "\"+y")
@@ -71,11 +74,6 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
