@@ -1,6 +1,13 @@
 -- start my keymaps
+
+
+-- codecompanion
+vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+-- tiny-code-action
 vim.keymap.set("n", "<leader>ca", function()
-	require("tiny-code-action").code_action()
+    require("tiny-code-action").code_action()
 end, { noremap = true, silent = true });
 
 -- vim-fugitive
@@ -23,8 +30,8 @@ vim.keymap.set({ 'n', 'i' }, '<C-s>', '<ESC>:wa<CR>')
 
 -- LSP
 -- Format
-vim.keymap.set("n", "<leader>f", function ()
-    vim.lsp.buf.format()
+vim.keymap.set("n", "<leader>f", function()
+    require("conform").format();
 end)
 
 -- error management
@@ -36,12 +43,12 @@ vim.keymap.set("n", "<leader><S-e>", "<cmd>lua require('telescope.builtin').diag
 vim.keymap.set("i", "<C-g>g", "<C-k>g*") -- gamma
 vim.keymap.set("i", "<C-g>d", "<C-k>d*") -- delta
 vim.keymap.set("i", "<C-g>h", "<C-k>h*") -- theta
-vim.keymap.set("i", "<C-g>p", "<C-k>p*") -- pi 
+vim.keymap.set("i", "<C-g>p", "<C-k>p*") -- pi
 vim.keymap.set("i", "<C-g>s", "<C-k>s*") -- sigma
 vim.keymap.set("i", "<C-g>f", "<C-k>f*") -- phi
 vim.keymap.set("i", "<C-g>w", "<C-k>w*") -- omega
 vim.keymap.set("i", "<C-g>q", "<C-k>q*") -- psi
-vim.keymap.set("i", "<C-g>a", "<C-k>a*") -- alpha 
+vim.keymap.set("i", "<C-g>a", "<C-k>a*") -- alpha
 vim.keymap.set("i", "<C-g>b", "<C-k>b*") -- beta
 vim.keymap.set("i", "<C-g>e", "<C-k>e*") -- epsilon
 vim.keymap.set("i", "<C-g>l", "<C-k>l*") -- lambda
@@ -104,5 +111,3 @@ vim.keymap.set("n", "<leader>tc", "<cmd>tabnew<CR>")
 vim.keymap.set("n", "<leader>td", "<cmd>tabclose<CR>")
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnext<CR>")
 vim.keymap.set("n", "<leader>tp", "<cmd>tabnprevious<CR>")
-
-
