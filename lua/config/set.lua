@@ -36,17 +36,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-
-
-
-
-
-
-
-
-
-
-
-
+vim.opt.conceallevel = 2
 
 
