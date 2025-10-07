@@ -12,6 +12,7 @@ return {
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
 				rust = { "rustfmt" },
+                java = {}
 			},
 			formatters = {
 				["php-cs-fixer"] = {

@@ -67,7 +67,7 @@ return {
             end,
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
 
         -- experimental signature help support

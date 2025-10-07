@@ -1,22 +1,18 @@
 -- start my keymaps
 
+-- codeactions
+vim.keymap.set({ "n", "x" }, "<leader>ca", function()
+	require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })
 
--- codecompanion
-vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-
--- tiny-code-action
-vim.keymap.set("n", "<leader>ca", function()
-    require("tiny-code-action").code_action()
-end, { noremap = true, silent = true });
 
 -- vim-fugitive
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
 -- Yank
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- Oil Open Parent Dir
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -26,17 +22,16 @@ vim.keymap.set("v", "<", "<gv", silent)
 vim.keymap.set("v", ">", ">gv", silent)
 
 -- save
-vim.keymap.set({ 'n', 'i' }, '<C-s>', '<ESC>:wa<CR>')
+vim.keymap.set({ "n", "i" }, "<C-s>", "<ESC>:wa<CR>")
 
 -- LSP
 -- Format
 vim.keymap.set("n", "<leader>f", function()
-    require("conform").format();
+	require("conform").format({ lsp_fallback = true })
 end)
 
 -- error management
 vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
--- TODO: need to figure this out
 vim.keymap.set("n", "<leader><S-e>", "<cmd>lua require('telescope.builtin').diagnostics({ sort_by = 'severity' })<CR>")
 
 -- Greek letters
@@ -62,9 +57,9 @@ vim.keymap.set("n", "<leader>wm", "<cmd>vnew<CR>")
 vim.keymap.set("n", "<leader>wc", "<cmd>close<CR>")
 vim.keymap.set("n", "<leader>wg", "<cmd>hide<CR>")
 
+
 -- end my keymaps
 
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -75,20 +70,18 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
-vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
 
 vim.keymap.set("n", "Q", "<nop>")
-
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
-
 
 -- buffer management
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>")
@@ -98,7 +91,6 @@ vim.keymap.set("n", "<leader>bl", "<cmd>ls<CR>")
 vim.keymap.set("n", "<leader>bw", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>bq", "<cmd>q<CR>")
 vim.keymap.set("n", "<leader>bs", "<cmd>w<CR>")
-
 
 -- window resizing
 vim.keymap.set("n", "<leader><Right>", "<C-W>>5")
