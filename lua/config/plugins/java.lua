@@ -54,7 +54,7 @@ return {
 
 			-- Enable code lens
 			vim.lsp.codelens.refresh()
-			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
 				buffer = bufnr,
 				callback = function()
 					vim.lsp.codelens.refresh()
