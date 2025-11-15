@@ -14,5 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.set");
 require("config.lsp");
-require("config.remap");
 require("config.lazy");
