@@ -2,6 +2,7 @@ require('lazy').setup({
     spec = {
         { import = "config.plugins" }
     },
+    change_detection = {
+        enabled = false,
+    },
 })
-
-vim.cmd.colorscheme("tokyonight-storm")

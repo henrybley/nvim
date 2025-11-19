@@ -13,6 +13,7 @@ return {
 				python = { "isort", "black" },
 				rust = { "rustfmt" },
 				java = {},
+				markdown = { "mdformat", "mdsf" },
 			},
 			formatters = {
 				["php-cs-fixer"] = {
@@ -23,7 +24,6 @@ return {
 					},
 					stdin = false,
 				},
-
 			},
 			notify_on_error = true,
 		})

@@ -3,6 +3,7 @@ vim.opt.diffopt = { "internal", "filler", "closeoff", "linematch:40" }
 
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.cursorline = true
 --
 
 vim.g.mapleader = " "
@@ -49,3 +50,4 @@ vim.api.nvim_create_autocmd("FileType", {
 		end)
 	end,
 })
+

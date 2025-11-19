@@ -14,7 +14,15 @@ return {
 			enabled = true,
 			timeout = 6000,
 		},
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			main = {
+				current = true,
+			},
+			jump = {
+				reuse_win = true,
+			},
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
@@ -78,6 +86,7 @@ return {
 			mode = "n",
 			desc = "Hide Window",
 		},
+		{ "<leader>woc", ":%bd|e# <CR>", mode = "n", desc = "Hide Window" },
 		-- Save
 		{
 			"<C-s>",
@@ -97,14 +106,22 @@ return {
 			silent = true,
 			expr = false,
 		},
-        -- Code Actions
-        {
-            "<leader>ca",
-            function ()
-                vim.lsp.buf.code_action()
-            end,
-            desc = "Code Actions"
-        },
+		-- Errors
+		{
+			"<leader>e",
+			function()
+				vim.diagnostic.open_float()
+			end,
+			desc = "Error diagnostic",
+		},
+		-- Code Actions
+		{
+			"<leader>ca",
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			desc = "Code Actions",
+		},
 		-- conform
 		{
 			"<leader>F",
@@ -179,7 +196,7 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>e",
+			"<leader>x",
 			function()
 				Snacks.explorer()
 			end,
