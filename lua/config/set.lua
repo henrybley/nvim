@@ -16,7 +16,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-vim.opt.textwidth = 80
 
 vim.opt.wrap = false
 
@@ -45,9 +44,8 @@ vim.api.nvim_create_autocmd("FileType", {
 			if ec and ec.max_line_length then
 				vim.opt_local.colorcolumn = ec.max_line_length
 			else
-				vim.opt_local.colorcolumn = "80"
+				vim.opt_local.colorcolumn = "100"
 			end
 		end)
 	end,
 })
-
