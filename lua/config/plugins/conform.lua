@@ -11,6 +11,7 @@ return {
 				typescriptreact = { "prettier" },
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
+                qml = { "qmlformat" },
 				rust = { "rustfmt" },
 				java = {},
 				markdown = { "mdformat", "mdsf" },

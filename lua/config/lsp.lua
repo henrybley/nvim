@@ -3,7 +3,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local opts = { buffer = event.buf }
 
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
+		vim.keymap.set(
+			"n",
+			"K",
+			vim.lsp.buf.hover,
+			vim.tbl_extend("force", opts, { desc = "Hover documentation" })
+		)
 		vim.keymap.set(
 			"n",
 			"<leader>gd",
@@ -40,7 +45,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.buf.signature_help,
 			vim.tbl_extend("force", opts, { desc = "Signature help" })
 		)
-		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+		vim.keymap.set(
+			"n",
+			"<leader>r",
+			vim.lsp.buf.rename,
+			vim.tbl_extend("force", opts, { desc = "Rename symbol" })
+		)
 	end,
 })
 
@@ -48,7 +58,8 @@ vim.lsp.enable({
 	"lua",
 	"nix",
 	"php",
+    --"qml",
 	"rust",
-    "slint",
+	"slint",
 	"typescript",
 })
