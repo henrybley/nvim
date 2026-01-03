@@ -17,6 +17,9 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -49,3 +52,23 @@ vim.api.nvim_create_autocmd("FileType", {
 		end)
 	end,
 })
+
+vim.keymap.set('n', ':', function()
+  vim.ui.input({ prompt = ":", completion = "command", row = 0, col = 10 }, function(input)
+    if input then
+      vim.cmd(input)
+    end
+  end)
+end)
+
+vim.keymap.set('n', '/', function()
+  require("snacks").input({
+    prompt = "Search",
+    icon = "", -- Nerd Font search icon
+  }, function(input)
+    if input and input ~= "" then
+      vim.fn.setreg('/', input)
+      vim.cmd('normal! /' .. input .. '\n')
+    end
+  end)
+end)
