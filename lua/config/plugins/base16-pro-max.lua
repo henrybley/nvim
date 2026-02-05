@@ -7,7 +7,7 @@ return {
 
 		require("base16-pro-max").setup({
 			-- Load colors from YAML file
-			colors = yaml_parser.get_base16_colors("~/.config/duck-colors/dark-duck.yaml"),
+			colors = yaml_parser.get_base16_colors("~/.config/duck-colors/grey-duck.yaml"),
 			styles = { 
                 dim_inactive_windows = true,
                 italic = false,

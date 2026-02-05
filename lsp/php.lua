@@ -1,15 +1,21 @@
 return {
-	cmd = { "intelephense", "--stdio" },
+	cmd = { "phpactor", "language-server" },
 	filetypes = { "php" },
 	root_markers = { "composer.json", ".git" },
 	settings = {
-		intelephense = {
-			files = {
-				maxSize = 1000000,
+		phpactor = {
+			language_server_phpstan = {
+				enabled = true,
 			},
-			format = {
-				enable = false, -- Disable built-in formatting, use external formatter
+
+			indexer = {
+				enabled = true,
+			},
+
+			diagnostics = {
+				enabled = true,
 			},
 		},
 	},
 }
+

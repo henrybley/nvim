@@ -36,6 +36,13 @@ local function get_filename()
 end
 
 ls.add_snippets("php", {
+	s("ns", {
+		t("namespace "),
+		f(function()
+			return get_namespace()
+		end),
+		t(";"),
+	}),
 	s("nsclass", {
 		t("<?php"),
 		t({ "", "" }),
