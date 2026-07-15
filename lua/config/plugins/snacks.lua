@@ -504,11 +504,37 @@ return {
 		},
 		-- LSP
 		{
-			"gd",
+			"K",
+			vim.lsp.buf.hover,
+			desc = "Hover documentation",
+		},
+		{
+			"<leader>r",
+			vim.lsp.buf.rename,
+			desc = "Rename symbol",
+		},
+{
+			"gd<CR>",
 			function()
 				Snacks.picker.lsp_definitions()
 			end,
-			desc = "Goto Definition",
+			desc = "Goto Definition Here",
+		},
+
+		{
+			"gdv",
+			function()
+				Snacks.picker.lsp_definitions({ confirm = "edit_vsplit" })
+			end,
+			desc = "Goto Definition Vertical",
+		},
+
+		{
+			"gdh",
+			function()
+				Snacks.picker.lsp_definitions({ confirm = "edit_split" })
+			end,
+			desc = "Goto Definition Horizontal",
 		},
 		{
 			"gD",
@@ -602,13 +628,6 @@ return {
 				Snacks.notifier.show_history()
 			end,
 			desc = "Notification History",
-		},
-		{
-			"<leader>bd",
-			function()
-				Snacks.bufdelete()
-			end,
-			desc = "Delete Buffer",
 		},
 		{
 			"<leader>cR",

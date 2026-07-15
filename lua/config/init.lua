@@ -10,6 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 
+vim.treesitter.language.register("css", "styled")
+
 vim.opt.rtp:prepend(lazypath)
 
 require("config.set");
