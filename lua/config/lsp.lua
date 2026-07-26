@@ -2,6 +2,7 @@ vim.lsp.enable({
 	"lua",
 	"nix",
 	"php",
+    "yaml",
 	--"qml",
 	"rust",
 	"slint",

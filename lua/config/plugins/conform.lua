@@ -11,10 +11,14 @@ return {
 				typescriptreact = { "prettier" },
 				php = { "php-cs-fixer" },
 				python = { "isort", "black" },
-                qml = { "qmlformat" },
+				qml = { "qmlformat" },
 				rust = { "rustfmt" },
 				java = {},
 				markdown = { "mdformat", "mdsf" },
+				css = { "prettier" },
+				scss = { "prettier" },
+				less = { "prettier" },
+				yaml = { "yamlfmt" },
 			},
 			formatters = {
 				["php-cs-fixer"] = {
